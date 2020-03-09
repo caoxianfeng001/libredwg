@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 #include <assert.h>
 //#include <math.h>
 
@@ -3558,6 +3559,8 @@ dwg_write_dxf (Bit_Chain *restrict dat, Dwg_Data *restrict dwg)
     dat->from_version = dwg->header.from_version;
   if (dwg->header.version <= R_2000 && dwg->header.from_version > R_2000)
     dwg_fixup_BLOCKS_entities (dwg);
+
+  setlocale (LC_NUMERIC, "C");
 
   VALUE_TV (PACKAGE_STRING, 999);
 

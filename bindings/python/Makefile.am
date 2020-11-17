@@ -46,7 +46,7 @@ _LibreDWG_la_SOURCES = $(BUILT_SOURCES) $(SWIG_SOURCES)
 ## more magic: SWIG_PYTHON_CPPFLAGS resolves to null and python includes
 ## are not passed to gcc via -I
 _LibreDWG_la_CPPFLAGS = -I$(top_srcdir)/include $(AX_SWIG_PYTHON_CPPFLAGS)
-_LibreDWG_la_LDFLAGS = -module
+_LibreDWG_la_LDFLAGS = -module -no-undefined
 _LibreDWG_la_LIBADD = ../../src/libredwg.la
 
 ## not elegant, but works
